@@ -1,0 +1,37 @@
+name: 'Sing Mender artifact'
+author: Kevin Rohn
+description: 'Sing Mender artifact'
+inputs:
+  artifact-input-name: 
+    description: 'Name of the mender artifact'
+    required: true
+
+  artifact-output-path: 
+    description: 'Output path for the signed mender artifact'
+    required: true
+
+  signed-artifact-name: 
+    description: 'The name of the signed mender artifact'
+    required: true
+
+  signing-key-path:
+    description: 'Path to the private signing key'
+    required: true
+
+outputs:
+  signed-artifact-path: # 
+    description: 'The path to the generated mender artifact.'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.artifact-input-name }}
+    - ${{ inputs.artifact-output-path }}
+    - ${{ inputs.signed-artifact-name }}
+    - ${{ inputs.signing-key-path }}
+
+
+branding:
+  icon: 'package'
+  color: 'green'
