@@ -1,6 +1,6 @@
-name: 'Sing mender artifact'
+name: 'Sign mender artifact'
 author: Kevin Rohn
-description: 'Sing mender artifact'
+description: 'Sign mender artifact'
 inputs:
   artifact-input-name: 
     description: 'Name of the mender artifact'
