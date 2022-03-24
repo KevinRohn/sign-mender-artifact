@@ -59,7 +59,7 @@ fi
 mender-artifact sign ${ARTIFACT_INPUT_NAME} -k ${SIGNING_KEY} -o ${ARTIFACT_OUTPUT_PATH}/${ARTIFACT_OUTPUT_NAME}.mender
 
 if [ -f "${ARTIFACT_OUTPUT_PATH}/${ARTIFACT_OUTPUT_NAME}.mender" ]; then
-  echo "Artifact ${OUTPUT_PATH}/${ARTIFACT_NAME}.mender signed successful."
+  echo "Artifact ${ARTIFACT_OUTPUT_PATH}/${ARTIFACT_NAME}.mender signed successful."
   echo "::set-output name=signed-artifact-path::${ARTIFACT_OUTPUT_PATH}/${ARTIFACT_OUTPUT_NAME}.mender"
   exit 0
 else
