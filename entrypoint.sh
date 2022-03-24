@@ -57,6 +57,7 @@ if ! check_dependency mender-artifact; then
 fi
 
 mender-artifact sign "${ARTIFACT_INPUT_NAME}" -k "${SIGNING_KEY}" -o "${ARTIFACT_OUTPUT_PATH}/${ARTIFACT_OUTPUT_NAME}.mender"
+chmod 644 "${ARTIFACT_OUTPUT_PATH}/${ARTIFACT_OUTPUT_NAME}.mender"
 
 if [ -f "${ARTIFACT_OUTPUT_PATH}/${ARTIFACT_OUTPUT_NAME}.mender" ]; then
   echo "Artifact ${ARTIFACT_OUTPUT_PATH}/${ARTIFACT_OUTPUT_NAME}.mender signed successful."
